@@ -1,9 +1,7 @@
 import os
 import time
 import unittest
-
-from common.appium_common.read_config import read_package_name, read_activity_name
-from common.appium_common.shell_boot_adb import shell
+from common.appium_common.read_config import*
 from utx import log
 
 
