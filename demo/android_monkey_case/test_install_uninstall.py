@@ -14,6 +14,7 @@ class TestInstall(unittest.TestCase):
         cls.apk_path = r"D:\PythonWorkSpace\Test_Api_App\data\app-release.apk"
 
     def test_install(self):
+        """安装APP"""
         adb = "adb install  %s" % self.apk_path
         print(adb)
         r = os.system(adb)
@@ -21,6 +22,7 @@ class TestInstall(unittest.TestCase):
         return r
 
     def test_uninstall(self):
+        """卸载APP"""
         time.sleep(5)
         adb = "adb   uninstall  %s" % self.package
         r = os.system(adb)
@@ -28,6 +30,7 @@ class TestInstall(unittest.TestCase):
         return r
 
     def test_reinstall(self):
+        """再次安装APP"""
         adb = "adb install  %s" % self.apk_path
         print(adb)
         r = os.system(adb)

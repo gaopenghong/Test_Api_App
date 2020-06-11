@@ -5,11 +5,7 @@ from utx import *
 import logging
 
 if __name__ == '__main__':
-    # setting.run_case = {Tag.ALL}  # 运行全部测试用例
-    setting.run_case = {Tag.UI_F2}  # 只运行SMOKE标记的测试用例
-    # setting.run_case = {Tag.SMOKE, Tag.V1_0_0}   # 只运行SMOKE和V1_0_0标记的测试用例
-    # setting.run_case = {Tag.V1_0_0}  # 只运行SMOKE和V1_0_0标记的测试用例
-    # setting.run_case ={Tag.UI}
+
 
     setting.check_case_doc = True  # 关闭检测是否编写了测试用例描述
     setting.full_case_name = True
@@ -23,8 +19,12 @@ if __name__ == '__main__':
     log.set_level(logging.INFO)  # 设置utx的log级别
     log.set_level(logging.DEBUG)  # 设置utx的log级别
 
-    # log.set_level_to_debug()     # 设置log级别的另外一种方法
-
+    # setting.run_case = {Tag.ALL}  # 运行全部测试用例
+    setting.run_case = {Tag.UI_F2}  # 只运行SMOKE标记的测试用例
+    # setting.run_case = {Tag.SMOKE, Tag.V1_0_0}   # 只运行SMOKE和V1_0_0标记的测试用例
+    # setting.run_case = {Tag.V1_0_0}  # 只运行SMOKE和V1_0_0标记的测试用例
     runner = TestRunner()
-    runner.add_case_dir("android_monkey_case")
+    # runner.add_case_dir("android_monkey_case")
+    runner.add_case_dir("appium_case")
+    """添加测试用例文件夹，多次调用可以添加多个文件夹，会按照文件夹的添加顺序执行用例"""
     runner.run_test(report_title='接口自动化测试报告')

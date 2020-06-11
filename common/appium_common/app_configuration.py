@@ -38,9 +38,7 @@ def get_driver():
     appPackageAdb = list(os.popen('aapt dump badging ' + appLocation).readlines())
     appPackage = re.findall(r'\'com\w*.*?\'', appPackageAdb[0])[0]
 
-    # # 删除以前的安装包
-    # os.system('adb uninstall ' + appPackage)
-    # print(deviceName)
+
     desired_caps = {
         'platformName': 'Android',
         'deviceName': 'OPPOr11s',
