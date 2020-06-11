@@ -10,7 +10,7 @@ class TestBootSpeed(unittest.TestCase):
     def setUpClass(cls):
         cls.boot_times = 2
 
-    def test_run_boot_test(self):
+    def test_run_boot(self):
 
         cold_time = []
         hot_time = []

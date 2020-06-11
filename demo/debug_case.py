@@ -2,9 +2,8 @@
 # -*- coding: UTF-8 -*-
 
 import utx
-from demo.appium_case.test_flow import TestAboutSend
-from demo.android_monkey_test import  T
+from demo.android_monkey_test import  TestBootSpeed
 
-utx.run_case(TestAboutSend, "test_111")
+utx.run_case(TestBootSpeed, "test_run_boot")
 
 
