@@ -24,7 +24,7 @@ if __name__ == '__main__':
     # setting.run_case = {Tag.SMOKE, Tag.V1_0_0}   # 只运行SMOKE和V1_0_0标记的测试用例
     # setting.run_case = {Tag.V1_0_0}  # 只运行SMOKE和V1_0_0标记的测试用例
     runner = TestRunner()
-    # runner.add_case_dir("android_monkey_case")
+    # runner.add_case_dir("android_adb_case")
     runner.add_case_dir("appium_case")
     """添加测试用例文件夹，多次调用可以添加多个文件夹，会按照文件夹的添加顺序执行用例"""
     runner.run_test(report_title='接口自动化测试报告')
