@@ -1,16 +1,18 @@
-
 import unittest
 
 from common.appium_common.read_config import *
 from common.appium_common.shell_boot_adb import *
+from utx import *
 
 
 class TestBootSpeed(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
         cls.boot_times = 2
-
+        cls.app = '牛老幺'
+    @tag(Tag.UI_F2)
     def test_run_boot(self):
+        """冷启动和热启动的平均速度"""
 
         cold_time = []
         hot_time = []
@@ -19,8 +21,8 @@ class TestBootSpeed(unittest.TestCase):
 
         # 正则表达式匹配出 id 信息
         device_id = re.findall(r'^\w*\b', read_device_id[1])[0]
-        package = read_package_name('牛老幺')
-        activity = read_activity_name('牛老幺')
+        package = read_package_name(self.app)
+        activity = read_activity_name(self.app)
 
         for i in range(self.boot_times):
             cold_time.append(get_cold_boot_time(package, activity))
@@ -31,7 +33,10 @@ class TestBootSpeed(unittest.TestCase):
         print("热启动时间 = " + str(hot_time))
         for i in cold_time:
             res_cold_time = res_cold_time + i
-        print('平均冷启动时间: ' + str(res_cold_time / self.boot_times) + ' ms')
+        log.info('平均冷启动时间: ' + str(res_hot_time / self.boot_times) + ' ms')
         for i in hot_time:
             res_hot_time = res_hot_time + i
-        print('平均热启动时间: ' + str(res_hot_time / self.boot_times) + ' ms')
+        log.info('平均热启动时间: ' + str(res_hot_time / self.boot_times) + ' ms')
+
+if __name__ == '__main__':
+        unittest.main()

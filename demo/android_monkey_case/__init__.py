@@ -2,5 +2,3 @@
 #Created by Administrator on 2020/6/11
 #Copyright (C) 2020 $USER.All rights reserved.
 
-if __name__ == '__main__':
-    pass

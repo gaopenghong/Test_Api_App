@@ -26,5 +26,5 @@ if __name__ == '__main__':
     # log.set_level_to_debug()     # 设置log级别的另外一种方法
 
     runner = TestRunner()
-    runner.add_case_dir("appium_case")
+    runner.add_case_dir("android_monkey_case")
     runner.run_test(report_title='接口自动化测试报告')
