@@ -2,13 +2,13 @@
 import unittest
 
 from common.appium_common.read_config import *
-from common.appium_common.shell_adb import *
+from common.appium_common.shell_boot_adb import *
 
 
 class TestBootSpeed(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
-        cls.boot_times = 10
+        cls.boot_times = 2
 
     def test_run_boot_test(self):
 
