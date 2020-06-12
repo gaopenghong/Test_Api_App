@@ -18,10 +18,11 @@ class TestInstallUninstall(unittest.TestCase):
         s = InstallUninstall().apk_install_status(self.package)
         if s:
             InstallUninstall().apk_uninstall(self)
+            log.info("已安装旧包，开始删除旧安装包")
         else:
             log.info("未安装旧包，可以直接安装新包哈哈")
 
-    @tag(Tag.INSTALL, Tag.SMOKE)
+    @tag(Tag.INSTALL)
     def test_install(self):
         """安装APP"""
         InstallUninstall().apk_install(self.apk_path)

@@ -22,8 +22,8 @@ if __name__ == '__main__':
     # setting.run_case = {Tag.ALL}  # 运行全部测试用例
     # setting.run_case = {Tag.UI_F2}  # 只运行SMOKE标记的测试用例
     setting.run_case = {Tag.INSTALL}
-    setting.run_case = {Tag.MONKEY}
-    setting.run_case = {Tag.BOOT_TIME}
+    # setting.run_case = {Tag.MONKEY}
+    # setting.run_case = {Tag.BOOT_TIME}
 
 
     # setting.run_case = {Tag.SMOKE, Tag.V1_0_0}   # 只运行SMOKE和V1_0_0标记的测试用例
