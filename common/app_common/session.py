@@ -3,7 +3,7 @@ import re
 
 from appium import webdriver
 
-from common.appium_common.read_config import read_ini
+from common.app_common.read_config import read_ini
 from config.appium_conf.load_file import load_file
 from utx import log
 

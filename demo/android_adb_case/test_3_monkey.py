@@ -3,7 +3,7 @@ import random
 import re
 import unittest
 import  warnings
-from common.appium_common.read_config import *
+from common.app_common.read_config import *
 from utx import log
 
 

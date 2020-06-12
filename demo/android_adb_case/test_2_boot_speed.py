@@ -1,7 +1,7 @@
 import unittest
 
-from common.appium_common.read_config import *
-from common.appium_common.shell_boot_adb import *
+from common.app_common.read_config import *
+from common.app_common.shell_boot_adb import *
 from utx import *
 
 

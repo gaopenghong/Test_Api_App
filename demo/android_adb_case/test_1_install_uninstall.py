@@ -1,7 +1,7 @@
 import os
 import time
 import unittest
-from common.appium_common.read_config import *
+from common.app_common.read_config import *
 from utx import *
 
 
@@ -26,7 +26,7 @@ class TestInstall(unittest.TestCase):
         else:
             log.info("未安装旧包，可以直接安装新包哈哈")
 
-    @tag(Tag.INSTALL)
+    @tag(Tag.INSTALL,Tag.SMOKE)
     def test_install(self):
         """安装APP"""
         adb = "adb install  %s" % self.apk_path

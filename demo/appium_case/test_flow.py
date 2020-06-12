@@ -3,8 +3,8 @@
 import time
 import unittest
 
-from common.appium_common.element_action import *
-from common.appium_common.session import *
+from common.app_common.element_action import *
+from common.app_common.session import *
 from utx import *
 
 

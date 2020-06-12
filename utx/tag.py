@@ -26,9 +26,9 @@ class Tag(Enum):
     UI_F6 = NewTag("UI自动化流程2")
     UI_F7 = NewTag("UI自动化流程2")
     UI_F8 = NewTag("UI自动化流程2")
-    INSTALL = NewTag("UI自动化流程2")
+    INSTALL = NewTag("安装卸载")
+    MONKEY=  NewTag('压力测试')
+    BOOT_TIME=NewTag("启动时间")
 
-    API_V1_0_0 = NewTag("接口自动化V1.0.0版本")
-    API_V2_0_0 = NewTag("接口自动化V1.0.0版本")
 
 
