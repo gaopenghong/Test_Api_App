@@ -15,8 +15,8 @@ class TestInstall(unittest.TestCase):
 
     @tag(Tag.INSTALL)
     def test_install_status(self):
-        adb_monkey = """adb  shell  pm list packages | find "com.dtysp.niuly" """
-        adb_monkey2 = """adb  shell  pm list packages | find "%s" """ % self.package
+        """查找是否已经安装此安装包,如果有的话删除旧包，如果没有安装就直接安装"""
+        adb_monkey2 = """adb  shell  pm list packages | find "%s" """ % self.package # adb命令查看是否已经安装此包
         status = os.popen(adb_monkey2).read()
         log.info(status)
         if status:
