@@ -1,11 +1,4 @@
-#! /usr/bin/env python
-# -*- coding: UTF-8 -*-
-import time
-import unittest
-
-from common.app_common.element_action import *
-from common.app_common.session import *
-from utx import *
+from demo.my_test import *
 
 
 class TestAbout(unittest.TestCase):
@@ -14,6 +7,7 @@ class TestAbout(unittest.TestCase):
     跳过权限弹窗
     找到联系人发送消息
     """
+
     @classmethod
     def setUpClass(cls):  # setUpClass所有用例开始前执行一遍，但是必须使用类函数装饰器
         cls.user_number = 18636299591
@@ -53,4 +47,3 @@ class TestAbout(unittest.TestCase):
     def test_send_massage(self):
         """发送消息给好友"""
         pass
-

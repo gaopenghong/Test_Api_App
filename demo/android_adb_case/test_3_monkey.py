@@ -1,11 +1,4 @@
-import time
-import unittest
-import warnings
-from common.app_common.element_action import *
-from common.app_common.read_config import *
-from common.app_common.session import *
-from common.app_common.shell_monkey_adb import *
-from utx import *
+from demo.my_test import *
 
 
 class MonkeyCase(unittest.TestCase):
@@ -34,7 +27,6 @@ class MonkeyCase(unittest.TestCase):
         for i in range(3):
             clicking(driver=cls.driver, elements_name=2, section_name='权限', name='允许')
             time.sleep(1.5)
-
 
     @tag(Tag.MONKEY)
     def test_monkey_fast(self):

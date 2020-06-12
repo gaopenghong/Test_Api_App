@@ -1,8 +1,4 @@
-import time
-import unittest
-from common.app_common.read_config import *
-from common.app_common.shell_install_adb import InstallUninstall
-from utx import *
+from demo.my_test import *
 
 
 class TestInstallUninstall(unittest.TestCase):

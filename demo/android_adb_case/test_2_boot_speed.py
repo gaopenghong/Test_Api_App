@@ -1,8 +1,4 @@
-import unittest
-
-from common.app_common.read_config import *
-from common.app_common.shell_boot_adb import *
-from utx import *
+from demo.my_test import *
 
 
 class TestBootSpeed(unittest.TestCase):
@@ -10,6 +6,7 @@ class TestBootSpeed(unittest.TestCase):
     def setUpClass(cls):
         cls.boot_times = 2
         cls.app = '牛老幺'
+
     @tag(Tag.UI_F2)
     def test_run_boot(self):
         """冷启动和热启动的平均速度"""
@@ -38,5 +35,6 @@ class TestBootSpeed(unittest.TestCase):
             res_hot_time = res_hot_time + i
         log.info('平均热启动时间: ' + str(res_hot_time / self.boot_times) + ' ms')
 
+
 if __name__ == '__main__':
-        unittest.main()
+    unittest.main()

@@ -1,11 +1,4 @@
-#! /usr/bin/env python
-# -*- coding: UTF-8 -*-
-import time
-import unittest
-
-from common.app_common.element_action import *
-from common.app_common.session import *
-from utx import *
+from demo.my_test import *
 
 
 class TestAboutSend(unittest.TestCase):
@@ -72,5 +65,6 @@ class TestAboutSend(unittest.TestCase):
             inputting(driver=self.driver, elements_name=2, section_name='好友', name='消息输入框', txt='你好')
             clicking(driver=self.driver, elements_name=2, section_name='好友', name='发送按钮')
             log.info("发送第" + str(i + 1) + "成功，发送消息内容“你好”")
+
     def test_111(self):
-        print("ssssssssssssssssssssssssssssssss"*100)
+        print("ssssssssssssssssssssssssssssssss" * 100)
