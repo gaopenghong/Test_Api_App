@@ -16,15 +16,15 @@ class TestInstall(unittest.TestCase):
     @tag(Tag.INSTALL)
     def test_install_status(self):
         adb_monkey = """adb  shell  pm list packages | find "com.dtysp.niuly" """
-        status = os.popen(adb_monkey).read()
+        adb_monkey2 = """adb  shell  pm list packages | find "%s" """ % self.package
+        status = os.popen(adb_monkey2).read()
         log.info(status)
         if status:
-            print("已安装")
             adb = "adb   uninstall  %s" % self.package
             os.system(adb)
             log.info('开始卸载旧包')
         else:
-            print("未安装旧包，可以直接安装新包哈哈")
+            log.info("未安装旧包，可以直接安装新包哈哈")
 
     @tag(Tag.INSTALL)
     def test_install(self):
@@ -41,7 +41,7 @@ class TestInstall(unittest.TestCase):
         time.sleep(5)
         adb = "adb   uninstall  %s" % self.package
         r = os.system(adb)
-        log.info("安装成功")
+        log.info("卸载成功")
         return r
 
     @tag(Tag.INSTALL)
