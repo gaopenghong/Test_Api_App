@@ -1,6 +1,6 @@
 from selenium.webdriver.support.wait import WebDriverWait
 from common.app_common.read_config import read_ini
-from config.appium_conf.load_file import load_file
+from config.app_conf.load_file import load_file
 
 
 def exist(driver, ini_file_path, name, value):  # 判断是否存在此元素
