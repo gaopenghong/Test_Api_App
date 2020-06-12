@@ -1,6 +1,6 @@
 import configparser
 
-from config.app_conf.load_file import load_file
+from config.load_file import *
 
 
 def read_ini(ini_file_path, name, value):  # 根据文件读取ini文件

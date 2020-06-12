@@ -8,11 +8,11 @@ def load_file(a):
     x_path_ini_path = os.path.abspath(os.path.dirname(__file__)) +"\path.ini"
     appPadkage_path=os.path.abspath(os.path.dirname(__file__)) +r"\appPadkage_appActivity.ini"
     dict_load = {
-        2: id_ini_path,
-        1:class_name_ini_path,
-        3:location_ini_path,
-        4:x_path_ini_path,
-        5:appPadkage_path
+        'id_ini': id_ini_path,
+        'class_name_ini':class_name_ini_path,
+        'location_ini':location_ini_path,
+        'xpath_ini':x_path_ini_path,
+        'app_conf':appPadkage_path
     }
     if a in dict_load.keys():
          print(dict_load[a])
