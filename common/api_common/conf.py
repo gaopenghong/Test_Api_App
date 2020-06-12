@@ -14,7 +14,7 @@ template_path = project_path + '/file/template'
 # 获取单个配置信息
 def get_config(target_section, target_option):
     cf = configparser.ConfigParser()
-    cf.read(os.path.join(project_path, 'config/conf.ini'), encoding='utf-8')
+    cf.read(os.path.join(project_path, 'config/parameter.ini'), encoding='utf-8')
     r = cf.get(target_section, target_option)
     return r
 
@@ -22,7 +22,7 @@ def get_config(target_section, target_option):
 # 获取单节配置信息
 def get_config_section(target_section):
     cf = configparser.ConfigParser()
-    cf.read(os.path.join(project_path, 'config/conf.ini'), encoding='utf-8')
+    cf.read(os.path.join(project_path, 'config/parameter.ini'), encoding='utf-8')
     return cf.items(target_section)
 
 
@@ -30,11 +30,11 @@ def get_config_section(target_section):
 def update_config(target_section, target_option, target_value):
     # 读取配置文件
     cf = configparser.ConfigParser()
-    cf.read(os.path.join(project_path, 'config/conf.ini'), encoding='utf-8')
+    cf.read(os.path.join(project_path, 'config/parameter.ini'), encoding='utf-8')
     # 更新配置文件
     cf.set(target_section, target_option, target_value)
     # 循环写入
-    with open(os.path.join(project_path, 'config/conf.ini'), 'w', encoding='utf-8') as fw:
+    with open(os.path.join(project_path, 'config/parameter.ini'), 'w', encoding='utf-8') as fw:
         cf.write(fw)
 
 
