@@ -10,4 +10,3 @@ from common.app_common.shell_monkey_adb import *
 from common.app_common.element_action import *
 
 
-user_number_1=18636299591
