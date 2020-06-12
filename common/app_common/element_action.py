@@ -13,22 +13,22 @@ def exist(driver, ini_file_path, name, value):  # 判断是否存在此元素
         return False
 
 
-def looking_for_element(driver, elements_name, section_name, name):  # 根据元素类型进行不同的元素定位
+def looking_for_element(driver, type, section_name, name):  # 根据元素类型进行不同的元素定位
     """elements_name:元素类型"""
     try:
-        if elements_name == 1:  # class_name
+        if type == 'class_name_type':  # class_name
             the_name = read_ini(ini_file_path=load_file('class_name_ini'), name=section_name, value=name)
             print(the_name)
             return WebDriverWait(driver, 30).until(lambda x: x.find_element_by_class_name(the_name))
-        if elements_name == 2:  # id
+        if type == 'id_type':  # id
             the_name1 = read_ini(ini_file_path=load_file('id_ini'), name=section_name, value=name)
             print(the_name1)
             return WebDriverWait(driver, 30).until(lambda x: x.find_element_by_id(the_name1))
-        if elements_name == 3:  # tap
+        if type == 'location_type':  # tap
             the_name2 = read_ini(ini_file_path=load_file('location_ini'), name=section_name, value=name)
             print(the_name2)
             return WebDriverWait(driver, 30).until(lambda x: x.tap(the_name2, 1000))
-        if elements_name == 4:  # xpath
+        if type == 'xpath_type':  # xpath
             the_name4 = read_ini(ini_file_path=load_file('xpath_ini'), name=section_name, value=name)
             print(the_name4)
             return WebDriverWait(driver, 25).until(lambda x: x.find_element_by_xpath(the_name4))
@@ -38,13 +38,13 @@ def looking_for_element(driver, elements_name, section_name, name):  # 根据元
         print("超时，请检查代码")
 
 
-def clicking(driver, elements_name, section_name, name):  # 点击
-    looking_for_element(driver=driver, elements_name=elements_name, section_name=section_name, name=name).click()
+def clicking(driver, type, section_name, name):  # 点击
+    looking_for_element(driver=driver, type=type, section_name=section_name, name=name).click()
 
 
-def inputting(driver, elements_name, section_name, name, txt):  # 输入内容
-    looking_for_element(driver=driver, elements_name=elements_name, section_name=section_name, name=name).send_keys(txt)
+def inputting(driver, type, section_name, name, txt):  # 输入内容
+    looking_for_element(driver=driver, type=type, section_name=section_name, name=name).send_keys(txt)
 
 
-def taping(driver, elements_name, section_name, name):  # 点击
-    looking_for_element(driver=driver, elements_name=elements_name, section_name=section_name, name=name)
+def taping(driver, type, section_name, name):  # 点击
+    looking_for_element(driver=driver, type=type, section_name=section_name, name=name)
