@@ -14,6 +14,15 @@ class TestInstall(unittest.TestCase):
         cls.apk_path = r"D:\PythonWorkSpace\Test_Api_App\data\app-release.apk"
 
     @tag(Tag.INSTALL)
+    def  test_install_status(self):
+
+
+        adb_monkey ="""adb  shell  pm list packages | find "com.dtysp.niuly" """
+        status=os.popen(adb_monkey).read()
+        log.info(status)
+        print(status)
+    @skip
+    @tag(Tag.INSTALL)
     def test_install(self):
         """安装APP"""
         adb = "adb install  %s" % self.apk_path
@@ -22,6 +31,7 @@ class TestInstall(unittest.TestCase):
         log.info("安装成功")
         return r
 
+    @skip
     @tag(Tag.INSTALL)
     def test_uninstall(self):
         """卸载APP"""
@@ -31,6 +41,7 @@ class TestInstall(unittest.TestCase):
         log.info("安装成功")
         return r
 
+    @skip
     @tag(Tag.INSTALL)
     def test_reinstall(self):
         """再次安装APP"""
