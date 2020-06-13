@@ -36,7 +36,7 @@ class TestInstallUninstall(unittest.TestCase):
     @tag(Tag.INSTALL)
     def test_reinstall(self):
         """再次安装APP"""
-        InstallUninstall().apk_install(apk_path)
+        re =InstallUninstall().apk_install(apk_path)
         log.info("再次安装")
         self.assertEqual (re, 'Performing Streamed Install\nSuccess\n')
 
