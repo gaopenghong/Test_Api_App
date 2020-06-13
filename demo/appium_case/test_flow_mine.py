@@ -1,7 +1,7 @@
-from demo.baseclass.basepage import *
+from demo.baseclass.base_login_pageUI import *
 
 
-class TestAbout(unittest.TestCase):
+class TestMine(unittest.TestCase):
     """
     用户登录
     跳过权限弹窗
@@ -20,15 +20,14 @@ class TestAbout(unittest.TestCase):
     @tag(Tag.UI_F2)
     def test_create_user_name(self):
         """修改昵称"""
-        log.info("进入我的")
-        clicking(driver=self.driver, type=id_type, section_name='导航', name='我的')
-        log.info("进入我的个人信息")
-        clicking(driver=self.driver, type=id_type, section_name='我的', name='个人信息')
-        log.info("点击昵称进行修改")
-        clicking(driver=self.driver, type=id_type, section_name='我的', name='昵称')
-        log.info("返回")
-        clicking(driver=self.driver, type=id_type, section_name='我的', name='返回')
-        clicking(driver=self.driver, type=id_type, section_name='我的', name='返回')
+        self.u=BasePageMine()
+        self.u.into_mine(self.driver)
+        self.u.into_my_information(self.driver)
+        self.u.user_name(self.driver)
+        for  i in range(2):
+            self.u.back(self.driver)
+
+
 
     @tag(Tag.UI_F2)
     def test_send_massage(self):

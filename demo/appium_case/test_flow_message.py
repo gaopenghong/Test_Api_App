@@ -1,7 +1,7 @@
-from demo.baseclass.basepage import *
+from demo.baseclass.base_login_pageUI import *
 
 
-class TestAboutSend(unittest.TestCase):
+class TestMessage(unittest.TestCase):
     """
     用户登录
     跳过权限弹窗
@@ -21,21 +21,9 @@ class TestAboutSend(unittest.TestCase):
     @tag(Tag.UI_F1)
     def test_skip_limits(self):
         """第一次进入APP的权限弹窗"""
-        time.sleep(3)
-        BasePage().skip_limits(driver=self.driver)
+        for i in range(3):
+            BasePage().skip_limits(driver=self.driver)
 
-    @tag(Tag.UI_F1)
-    def test_create_user_name(self):
-        """修改昵称"""
-        log.info("进入我的")
-        clicking(driver=self.driver, type=id_type, section_name='导航', name='我的')
-        log.info("进入我的个人信息")
-        clicking(driver=self.driver, type=id_type, section_name='我的', name='个人信息')
-        log.info("点击昵称进行修改")
-        clicking(driver=self.driver, type=id_type, section_name='我的', name='昵称')
-        log.info("返回")
-        clicking(driver=self.driver, type=id_type, section_name='我的', name='返回')
-        clicking(driver=self.driver, type=id_type, section_name='我的', name='返回')
 
     @skip
     @tag(Tag.UI_F1)

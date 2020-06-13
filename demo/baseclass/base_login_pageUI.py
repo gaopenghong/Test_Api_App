@@ -4,9 +4,7 @@ import warnings
 from common.app_common.element_action import *
 import os
 import re
-
 from appium import webdriver
-
 from common.app_common.read_config import *
 from config.load_file import *
 from utx import log
@@ -14,10 +12,9 @@ from utx import *
 from common.app_common.read_config import *
 from common.app_common.shell_install_adb import *
 from common.app_common.shell_boot_adb import *
-# from common.app_common.session import *
 from common.app_common.shell_monkey_adb import *
-from demo.my_test import *
-
+from demo.baseclass.base_mine_pageUI import *
+from demo.baseclass.base_message_pageUI import *
 
 class BasePage():
 
@@ -63,4 +60,4 @@ class BasePage():
         time.sleep(2)
         log.info("操作权限弹窗")
         clicking(driver=driver, type='id_type', section_name='权限', name='允许')
-        time.sleep(1.5)
+        time.sleep(2)

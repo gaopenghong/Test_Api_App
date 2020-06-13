@@ -1,4 +1,4 @@
-from demo.baseclass.basepage import *
+from demo.baseclass.base_login_pageUI import *
 
 
 class TestInstallUninstall(unittest.TestCase):
