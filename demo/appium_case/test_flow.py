@@ -10,19 +10,19 @@ class TestAboutSend(unittest.TestCase):
 
     @classmethod
     def setUpClass(cls):  # setUpClass所有用例开始前执行一遍，但是必须使用类函数装饰器
-        cls.driver = driver_begin(app_name_nly)
+        cls.driver = BasePage().driver_begin(app_name_nly)
         log.debug("初始化APP，测试数据初始化")
 
     @tag(Tag.UI_F1)
     def test_login(self):
         """测试登陆操作"""
-        BasePage(driver=self.driver).login_base(user_number=user_1, password=password)
+        BasePage().login_base(driver=self.driver,user_number=user_1, password=password)
 
     @tag(Tag.UI_F1)
     def test_skip_limits(self):
         """第一次进入APP的权限弹窗"""
         time.sleep(3)
-        BasePage(driver=self.driver).skip_limits()
+        BasePage().skip_limits(driver=self.driver)
 
     @tag(Tag.UI_F1)
     def test_create_user_name(self):
