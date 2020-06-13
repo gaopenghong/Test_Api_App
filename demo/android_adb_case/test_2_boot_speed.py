@@ -6,7 +6,7 @@ class TestBootSpeed(unittest.TestCase):
     def setUpClass(cls):
         cls.boot_times = 2
 
-    @tag(Tag.UI_F2)
+    @tag(Tag.BOOT_TIME)
     def test_run_boot(self):
         """冷启动和热启动的平均速度"""
 
@@ -29,7 +29,7 @@ class TestBootSpeed(unittest.TestCase):
         print("热启动时间 = " + str(hot_time))
         for i in cold_time:
             res_cold_time = res_cold_time + i
-        log.info('平均冷启动时间: ' + str(res_hot_time / self.boot_times) + ' ms')
+        log.info('平均冷启动时间: ' + str(res_cold_time / self.boot_times) + ' ms')
         for i in hot_time:
             res_hot_time = res_hot_time + i
         log.info('平均热启动时间: ' + str(res_hot_time / self.boot_times) + ' ms')
