@@ -8,11 +8,6 @@ class TestMessage(BaseCaseSetup):
     找到联系人发送消息
     """
 
-
-
-
-
-
     @skip
     @tag(Tag.UI_F1)
     def test_send_massage(self):
