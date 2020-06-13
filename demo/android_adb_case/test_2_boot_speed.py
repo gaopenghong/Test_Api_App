@@ -9,6 +9,8 @@ class TestBootSpeed(unittest.TestCase):
     @tag(Tag.BOOT_TIME)
     def test_run_boot(self):
         """冷启动和热启动的平均速度"""
+        log.info('在执行测试用例：%s，file：%s，line：%s' % (get_function_name(), sys._getframe().f_code.co_filename,
+                                                sys._getframe().f_lineno))
 
         cold_time = []
         hot_time = []

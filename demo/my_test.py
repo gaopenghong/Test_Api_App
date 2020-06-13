@@ -16,5 +16,6 @@ xpath_type = 'xpath_type'
 
 #路径
 apk_path = read_ini(ini_file_path=load_file('parameter'), name='路径', value='apk_path')
+monkey_log_path="D:\\PythonWorkSpace\\Test_Api_App\\demo\\report"  # monkey日志存放路径
 print(apk_path)
 

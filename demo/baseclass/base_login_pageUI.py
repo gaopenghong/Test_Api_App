@@ -15,7 +15,7 @@ from common.app_common.shell_boot_adb import *
 from common.app_common.shell_monkey_adb import *
 from demo.baseclass.base_mine_pageUI import *
 from demo.baseclass.base_message_pageUI import *
-
+from common.api_common.comm import *
 class BasePage():
 
     def driver_begin(self, app):
