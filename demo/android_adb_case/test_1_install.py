@@ -1,17 +1,16 @@
-from demo.my_test import *
+from demo.appium_case.basepage import *
 
 
 class TestInstallUninstall(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
-        cls.app = '牛老幺'
-        cls.package = read_package_name(cls.app)
-        cls.apk_path = r"D:\PythonWorkSpace\Test_Api_App\data\app-release.apk"
+        pass
+
 
     @tag(Tag.INSTALL)
     def test_install_status(self):
         """查找是否已经安装此安装包,如果有的话删除旧包，如果没有安装就直接安装"""
-        s = InstallUninstall().apk_install_status(self.package)
+        s = InstallUninstall().apk_install_status(package_name_nly)
         if s:
             InstallUninstall().apk_uninstall(self)
             log.info("已安装旧包，开始删除旧安装包")
@@ -21,22 +20,25 @@ class TestInstallUninstall(unittest.TestCase):
     @tag(Tag.INSTALL)
     def test_install(self):
         """安装APP"""
-        InstallUninstall().apk_install(self.apk_path)
-        log.info("安装成功")
+        re = InstallUninstall().apk_install(apk_path)
+        print('安装成功的返回值为：'+re)
+        log.info("安装中")
+        self.assertEqual (re, 'Performing Streamed Install\nSuccess\n')
 
     @tag(Tag.INSTALL)
     def test_uninstall(self):
         """卸载APP"""
         time.sleep(5)
-        InstallUninstall().apk_uninstall(self.package)
-        log.info("卸载成功")
+        re =InstallUninstall().apk_uninstall(package_name_nly)
+        log.info("卸载中")
+        self.assertEqual (re, 'Success\n')
 
     @tag(Tag.INSTALL)
     def test_reinstall(self):
         """再次安装APP"""
-        InstallUninstall().apk_install(self.apk_path)
-        log.info("再次安装成功")
+        InstallUninstall().apk_install(apk_path)
+        log.info("再次安装")
+        self.assertEqual (re, 'Performing Streamed Install\nSuccess\n')
 
 
-if __name__ == '__main__':
-    unittest.main()
+

@@ -1,4 +1,4 @@
-from demo.my_test import *
+from demo.appium_case.basepage import *
 
 
 class MonkeyCase(unittest.TestCase):

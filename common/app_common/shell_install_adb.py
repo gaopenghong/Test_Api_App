@@ -23,8 +23,8 @@ class InstallUninstall():
         apk_path：包存放路径
         """
         adb = "adb install  %s" % apk_path
-        print(adb)
-        os.system(adb)
+        read=os.popen(adb).read()
+        return  read
 
     def apk_uninstall(self,package):
         """
@@ -34,7 +34,8 @@ class InstallUninstall():
         """
         time.sleep(5)
         adb = "adb   uninstall  %s" % package
-        os.system(adb)
+        read = os.popen(adb).read()
+        return read
 
 
 
