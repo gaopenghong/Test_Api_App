@@ -6,7 +6,7 @@ password = read_ini(ini_file_path=load_file('parameter'), name='用户', value='
 # app信息
 app_name_nly = read_ini(ini_file_path=load_file('app_conf'), name='牛老幺', value='appName')
 package_name_nly = read_ini(ini_file_path=load_file('app_conf'), name='牛老幺', value='appPackage')
-print(package_name_nly)
+print(app_name_nly)
 
 # 元素类型
 id_type = 'id_type'

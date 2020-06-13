@@ -5,7 +5,6 @@ class TestBootSpeed(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
         cls.boot_times = 2
-        cls.app = '牛老幺'
 
     @tag(Tag.UI_F2)
     def test_run_boot(self):
@@ -18,8 +17,8 @@ class TestBootSpeed(unittest.TestCase):
 
         # 正则表达式匹配出 id 信息
         device_id = re.findall(r'^\w*\b', read_device_id[1])[0]
-        package = read_package_name(self.app)
-        activity = read_activity_name(self.app)
+        package = read_package_name(app_name_nly)
+        activity = read_activity_name(app_name_nly)
 
         for i in range(self.boot_times):
             cold_time.append(get_cold_boot_time(package, activity))
