@@ -1,4 +1,4 @@
-from demo.appium_case.basepage import *
+from demo.baseclass.basepage import *
 
 
 class TestAbout(unittest.TestCase):
@@ -14,7 +14,8 @@ class TestAbout(unittest.TestCase):
         log.debug("初始化APP，测试数据初始化")
         BasePage(driver=cls.driver).login_base(user_number=user_1,password=password)
         time.sleep(2)
-        BasePage(driver=cls.driver).skip_limits()
+        for i in range(3):
+            BasePage(driver=cls.driver).skip_limits()
 
     @tag(Tag.UI_F2)
     def test_create_user_name(self):
