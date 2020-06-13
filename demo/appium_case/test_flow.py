@@ -1,6 +1,4 @@
-from demo.my_test import *
 from demo.appium_case.basepage import *
-
 
 
 class TestAboutSend(unittest.TestCase):
@@ -18,7 +16,7 @@ class TestAboutSend(unittest.TestCase):
     @tag(Tag.UI_F1)
     def test_login(self):
         """测试登陆操作"""
-        BasePage(driver=self.driver).login_base(user_number=user_1,password=password)
+        BasePage(driver=self.driver).login_base(user_number=user_1, password=password)
 
     @tag(Tag.UI_F1)
     def test_skip_limits(self):
@@ -38,6 +36,7 @@ class TestAboutSend(unittest.TestCase):
         log.info("返回")
         clicking(driver=self.driver, type=id_type, section_name='我的', name='返回')
         clicking(driver=self.driver, type=id_type, section_name='我的', name='返回')
+
     @skip
     @tag(Tag.UI_F1)
     def test_send_massage(self):

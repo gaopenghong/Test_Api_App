@@ -8,6 +8,7 @@ from common.app_common.shell_install_adb import *
 from common.app_common.shell_boot_adb import *
 from common.app_common.session import *
 from common.app_common.shell_monkey_adb import *
+from demo.my_test import *
 
 class BasePage():
     def __init__(self, driver):

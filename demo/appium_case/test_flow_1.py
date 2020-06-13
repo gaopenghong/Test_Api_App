@@ -1,4 +1,3 @@
-from demo.my_test import *
 from demo.appium_case.basepage import *
 
 
@@ -13,20 +12,9 @@ class TestAbout(unittest.TestCase):
     def setUpClass(cls):  # setUpClass所有用例开始前执行一遍，但是必须使用类函数装饰器
         cls.driver = driver_begin(app_name_nly)
         log.debug("初始化APP，测试数据初始化")
-        time.sleep(1)
-        log.info("开始执行登录操作")
-        log.info("----" * 15)
-        inputting(driver=cls.driver, type=id_type, section_name='登录页面', name='输入框', txt=user_1)
-        log.info("输入账号")
-        inputting(driver=cls.driver, type=id_type, section_name='登录页面', name='密码', txt=password)
-        log.info("输入密码")
-        clicking(driver=cls.driver, type=id_type, section_name='登录页面', name='登录按钮')
-        log.info("点击登录")
+        BasePage(driver=cls.driver).login_base(user_number=user_1,password=password)
         time.sleep(2)
-        log.info("操作权限弹窗三次")
-        for i in range(3):
-            clicking(driver=cls.driver, type=id_type, section_name='权限', name='允许')
-            time.sleep(1.5)
+        BasePage(driver=cls.driver).skip_limits()
 
     @tag(Tag.UI_F2)
     def test_create_user_name(self):
