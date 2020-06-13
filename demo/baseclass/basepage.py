@@ -53,9 +53,9 @@ class BasePage():
         log.info("----" * 15)
         inputting(driver=driver, type='id_type', section_name='登录页面', name='输入框', txt=user_number)
         log.info("输入账号")
-        inputting(driver=self.driver, type='id_type', section_name='登录页面', name='密码', txt=password)
+        inputting(driver=driver, type='id_type', section_name='登录页面', name='密码', txt=password)
         log.info("输入密码")
-        clicking(driver=self.driver, type='id_type', section_name='登录页面', name='登录按钮')
+        clicking(driver=driver, type='id_type', section_name='登录页面', name='登录按钮')
         log.info("点击登录")
 
     def skip_limits(self,driver):
