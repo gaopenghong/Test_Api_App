@@ -4,7 +4,7 @@ from demo.baseclass.base_login_pageUI import *
 class TestBootSpeed(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
-        cls.boot_times = 2
+        cls.boot_times = 3
 
     @tag(Tag.BOOT_TIME)
     def test_run_boot(self):
@@ -25,8 +25,8 @@ class TestBootSpeed(unittest.TestCase):
             hot_time.append(get_hot_boot_time(package, activity, device_id))
         res_cold_time = 0
         res_hot_time = 0
-        print("冷启动时间 = " + str(cold_time))
-        print("热启动时间 = " + str(hot_time))
+        log.info("冷启动时间 = " + str(cold_time))
+        log.info("热启动时间 = " + str(hot_time))
         for i in cold_time:
             res_cold_time = res_cold_time + i
         log.info('平均冷启动时间: ' + str(res_cold_time / self.boot_times) + ' ms')

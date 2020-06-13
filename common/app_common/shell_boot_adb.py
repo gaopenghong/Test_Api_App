@@ -4,13 +4,13 @@ import re
 import subprocess
 import time
 
+
 # 执行shell
 def shell(cmd):
     p = subprocess.Popen(cmd, stdin=subprocess.PIPE, stdout=subprocess.PIPE, shell=True)
     (stdout_output, err_output) = p.communicate()
     if err_output != None and len(err_output) != 0:
         print("Shell err_output: " + str(err_output))
-    # print("stdout_output: " + str(stdout_output))
     return stdout_output
 
 
@@ -63,6 +63,7 @@ def set_activity_backup(package_name, launch_activity, device_id=''):
         cmd = 'adb shell input keyevent key 3'
     shell(cmd)
 
+
 # 获取冷启动时间
 def get_cold_boot_time(package_name, launch_activity, device_id=''):
     # if is_activity_started(package_name, device_id):
@@ -73,9 +74,9 @@ def get_cold_boot_time(package_name, launch_activity, device_id=''):
     else:
         cmd_start = "adb shell am start -W %s | findstr WaitTime" % (package_name + "/" + launch_activity)
     cold_boot_time = shell(cmd_start)[10:].strip()
-    print('冷启动时间' + str(cold_boot_time))
 
     return int(cold_boot_time)
+
 
 # 获取热启动时间
 def get_hot_boot_time(package_name, launch_activity, device_id=''):
@@ -86,10 +87,4 @@ def get_hot_boot_time(package_name, launch_activity, device_id=''):
     else:
         cmd_start = "adb shell am start -W %s | findstr WaitTime" % (package_name + "/" + launch_activity)
     cold_boot_time = shell(cmd_start)[10:].strip()
-    print('热启动时间' + str(cold_boot_time))
     return int(cold_boot_time)
-
-
-
-# 执行次
-
