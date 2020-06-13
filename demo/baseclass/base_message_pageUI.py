@@ -8,4 +8,3 @@ from demo.my_test import *
 
 class BasePageMessage():
     pass
-

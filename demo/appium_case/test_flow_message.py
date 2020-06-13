@@ -1,28 +1,16 @@
-from demo.baseclass.base_login_pageUI import *
+from demo.appium_case.base_case import *
 
 
-class TestMessage(unittest.TestCase):
+class TestMessage(BaseCaseSetup):
     """
     用户登录
     跳过权限弹窗
     找到联系人发送消息
     """
 
-    @classmethod
-    def setUpClass(cls):  # setUpClass所有用例开始前执行一遍，但是必须使用类函数装饰器
-        cls.driver = BasePage().driver_begin(app_name_nly)
-        log.debug("初始化APP，测试数据初始化")
 
-    @tag(Tag.UI_F1)
-    def test_login(self):
-        """测试登陆操作"""
-        BasePage().login_base(driver=self.driver,user_number=user_1, password=password)
 
-    @tag(Tag.UI_F1)
-    def test_skip_limits(self):
-        """第一次进入APP的权限弹窗"""
-        for i in range(3):
-            BasePage().skip_limits(driver=self.driver)
+
 
 
     @skip

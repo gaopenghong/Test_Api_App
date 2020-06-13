@@ -20,7 +20,7 @@ if __name__ == '__main__':
     log.set_level(logging.DEBUG)  # 设置utx的log级别
 
     # setting.run_case = {Tag.ALL}  # 运行全部测试用例
-    setting.run_case = {Tag.UI_F1}  # 只运行SMOKE标记的测试用例
+    setting.run_case = {Tag.UI_F2}  # 只运行SMOKE标记的测试用例
     # setting.run_case = {Tag.INSTALL}
     # setting.run_case = {Tag.MONKEY}
     # setting.run_case = {Tag.BOOT_TIME}
