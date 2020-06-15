@@ -14,9 +14,9 @@ class TestMessage(BaseCaseSetup):
         message = "我爱中华"
         for i in range(200):
             message = message + "爱"
-        print(message)
         me = BasePageMessage()
         me.into_chat_list(self.driver)
         me.into_chat_group(self.driver)
-        me.write(driver=self.driver, message=message)
-        me.send(self.driver)
+        for i in range(10):
+            me.write(driver=self.driver, message=message)
+            me.send(self.driver)

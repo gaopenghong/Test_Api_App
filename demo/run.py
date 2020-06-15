@@ -5,8 +5,6 @@ from utx import *
 import logging
 
 if __name__ == '__main__':
-
-
     setting.check_case_doc = True  # 关闭检测是否编写了测试用例描述
     setting.full_case_name = True
     setting.max_case_name_len = 80  # 测试报告内，显示用例名字的最大程度
@@ -19,13 +17,12 @@ if __name__ == '__main__':
     log.set_level(logging.INFO)  # 设置utx的log级别
     log.set_level(logging.DEBUG)  # 设置utx的log级别
 
-    # setting.run_case = {Tag.ALL}  # 运行全部测试用例
-    # setting.run_case = {Tag.INSTALL}
+    # 运行全部测试用例
+    # setting.run_case = {Tag.ALL}
+    setting.run_case = {Tag.INSTALL}
     # setting.run_case = {Tag.MONKEY}
     # setting.run_case = {Tag.BOOT_TIME}
-    # setting.run_case = {Tag.INSTALL}
-
-
+    # setting.run_case = {Tag.UI_F1}
 
     runner = TestRunner()
     runner.add_case_dir("android_adb_case")
