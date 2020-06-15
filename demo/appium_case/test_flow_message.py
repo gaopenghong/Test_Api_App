@@ -17,6 +17,6 @@ class TestMessage(BaseCaseSetup):
         me = BasePageMessage()
         me.into_chat_list(self.driver)
         me.into_chat_group(self.driver)
-        for i in range(10):
+        for i in range(1000):
             me.write(driver=self.driver, message=message)
             me.send(self.driver)
