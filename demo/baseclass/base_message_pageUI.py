@@ -1,8 +1,8 @@
-from utx import *
+import time
 
-from common.app_common.shell_boot_adb import *
-
+from common.app_common.element_action import *
 from demo.my_test import *
+from utx import log
 
 
 class BasePageMessage():

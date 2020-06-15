@@ -1,6 +1,6 @@
 from selenium.webdriver.support.wait import WebDriverWait
 from common.app_common.read_config import read_ini
-from config.load_file import *
+from common.conf_path import *
 
 
 def exist(driver, ini_file_path, name, value):  # 判断是否存在此元素
@@ -12,24 +12,24 @@ def exist(driver, ini_file_path, name, value):  # 判断是否存在此元素
     else:
         return False
 
-
 def looking_for_element(driver, type, section_name, name):  # 根据元素类型进行不同的元素定位
     """elements_name:元素类型"""
+    # 元素类型
     try:
         if type == 'class_name_type':  # class_name
-            the_name = read_ini(ini_file_path=load_file('class_name_ini'), name=section_name, value=name)
+            the_name = read_ini(ini_file_path=ele_class_name_conf_path, name=section_name, value=name)
             print(the_name)
             return WebDriverWait(driver, 30).until(lambda x: x.find_element_by_class_name(the_name))
         if type == 'id_type':  # id
-            the_name1 = read_ini(ini_file_path=load_file('id_ini'), name=section_name, value=name)
+            the_name1 = read_ini(ini_file_path=ele_id_conf_path, name=section_name, value=name)
             print(the_name1)
             return WebDriverWait(driver, 30).until(lambda x: x.find_element_by_id(the_name1))
         if type == 'location_type':  # tap
-            the_name2 = read_ini(ini_file_path=load_file('location_ini'), name=section_name, value=name)
+            the_name2 = read_ini(ini_file_path=ele_location_conf_path, name=section_name, value=name)
             print(the_name2)
             return WebDriverWait(driver, 30).until(lambda x: x.tap(the_name2, 1000))
         if type == 'xpath_type':  # xpath
-            the_name4 = read_ini(ini_file_path=load_file('xpath_ini'), name=section_name, value=name)
+            the_name4 = read_ini(ini_file_path=ele_xpath_conf_path, name=section_name, value=name)
             print(the_name4)
             return WebDriverWait(driver, 25).until(lambda x: x.find_element_by_xpath(the_name4))
     except TypeError:

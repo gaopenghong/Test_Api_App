@@ -1,21 +1,26 @@
-from common.app_common.element_action import *
+from common.conf_path import *
+
+from common.app_common.read_config import *
+
 
 # 用户信息
-user_1 = read_ini(ini_file_path=load_file('parameter'), name='用户', value='user_1')
-password = read_ini(ini_file_path=load_file('parameter'), name='用户', value='password')
+user_1 = read_ini(ini_file_path=parameter_conf_path, name='用户', value='user_1')
+password = read_ini(ini_file_path=parameter_conf_path, name='用户', value='password')
+
 # app信息
-app_name_nly = read_ini(ini_file_path=load_file('app_conf'), name='牛老幺', value='appName')
-package_name_nly = read_ini(ini_file_path=load_file('app_conf'), name='牛老幺', value='appPackage')
+app_name_nly = read_ini(ini_file_path=app_conf_path, name='牛老幺', value='appName')
+package_name_nly = read_ini(ini_file_path=app_conf_path, name='牛老幺', value='appPackage')
+activity_name_nly = read_ini(ini_file_path=app_conf_path, name='牛老幺', value='appActivity')
 print(app_name_nly)
 
 # 元素类型
 id_type = 'id_type'
-class_name_ini = 'class_name_ini'
+class_name_type = 'class_name_type'
 location_type = 'location_type'
 xpath_type = 'xpath_type'
 
-#路径
-apk_path = read_ini(ini_file_path=load_file('parameter'), name='路径', value='apk_path')
-monkey_log_path="D:\\PythonWorkSpace\\Test_Api_App\\demo\\report"  # monkey日志存放路径
-print(apk_path)
+# 安装包存放路径
+apk_path = r"D:\PythonWorkSpace\Test_Api_App\data\app-release.apk"
 
+# monkey日志存放路径
+monkey_log_path = "D:\\PythonWorkSpace\\Test_Api_App\\demo\\report"

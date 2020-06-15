@@ -6,7 +6,6 @@ import os
 import re
 from appium import webdriver
 from common.app_common.read_config import *
-from config.load_file import *
 from utx import log
 from utx import *
 from common.app_common.read_config import *
@@ -16,6 +15,8 @@ from common.app_common.shell_monkey_adb import *
 from demo.baseclass.base_mine_pageUI import *
 from demo.baseclass.base_message_pageUI import *
 from common.api_common.comm import *
+from demo.my_test import *
+
 class BasePage():
 
     def driver_begin(self, app):
@@ -28,23 +29,21 @@ class BasePage():
         deviceAndroidVersion = list(os.popen('adb shell getprop ro.build.version.release').readlines())
         log.info("测试设备系统版本为%s" % deviceAndroidVersion)
         deviceVersion = re.findall(r'^\w*\b', deviceAndroidVersion[0])[0]
-        package_name = read_ini(ini_file_path=load_file('app_conf'), name=app, value='appPackage')
-        activity_name = read_ini(ini_file_path=load_file('app_conf'), name=app, value='appActivity')
+        # package_name = read_ini(ini_file_path=app_conf_path, name=app, value='appPackage')
         platformName = 'Android'
-        print(package_name, activity_name)
         desired_caps = {
             'platformName': platformName,
             'deviceName': deviceName,
             'platformVersion': deviceVersion,
-            'appPackage': package_name,
-            'appActivity': activity_name,
+            'appPackage': package_name_nly,
+            'appActivity': activity_name_nly,
             'noReset': False,
             'resetKeyboard': False  # 将键盘给隐藏起来
             # 'unicodeKeyboard': True,# 使用unicodeKeyboard的编码方式来发送字符串
         }
         return webdriver.Remote('http://127.0.0.1:4723/wd/hub', desired_caps)
 
-    def login_base(self, driver,user_number, password):
+    def login_base(self, driver, user_number, password):
         """登录base方法"""
         time.sleep(2)
         log.info("开始执行登录操作")
@@ -57,7 +56,7 @@ class BasePage():
         log.info("点击登录")
         time.sleep(2)
 
-    def skip_limits(self,driver):
+    def skip_limits(self, driver):
         """跳过权限弹窗，允许"""
         log.info("操作权限弹窗")
         clicking(driver=driver, type=id_type, section_name='权限', name='允许')
