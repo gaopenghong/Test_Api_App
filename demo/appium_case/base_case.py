@@ -7,7 +7,6 @@ class BaseCaseSetup(unittest.TestCase):
         cls.driver = BasePage().driver_begin(app_name_nly)
         log.debug("初始化APP，测试数据初始化")
         BasePage().login_base(driver=cls.driver, user_number=user_1, password=password)
-        time.sleep(2)
         for i in range(3):
             BasePage().skip_limits(cls.driver)
 

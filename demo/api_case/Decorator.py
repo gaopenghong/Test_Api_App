@@ -8,6 +8,7 @@ def timer(func):
         stop = time.time()
         print(stop-start)
     return deco
+
 def test():
     time.sleep(2)
     print("test is running!")
