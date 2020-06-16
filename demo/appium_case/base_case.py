@@ -1,6 +1,6 @@
-from demo.baseclass.base_login_pageUI import *
-from demo.baseclass.base_mine_pageUI import *
-from demo.baseclass.base_message_pageUI import *
+from demo.base_page_class.base_login_pageUI import *
+from demo.base_page_class.base_mine_pageUI import *
+from demo.base_page_class.base_message_pageUI import *
 
 class BaseCaseSetup(unittest.TestCase):
     @classmethod
