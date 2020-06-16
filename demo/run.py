@@ -19,13 +19,14 @@ if __name__ == '__main__':
 
     # 运行全部测试用例
     # setting.run_case = {Tag.ALL}
-    setting.run_case = {Tag.INSTALL}
+    # setting.run_case = {Tag.INSTALL}
     # setting.run_case = {Tag.MONKEY}
     # setting.run_case = {Tag.BOOT_TIME}
-    # setting.run_case = {Tag.UI_F1}
+    setting.run_case = {Tag.UI_F1}
 
     runner = TestRunner()
     runner.add_case_dir("android_adb_case")
     runner.add_case_dir("appium_case")
     """添加测试用例文件夹，多次调用可以添加多个文件夹，会按照文件夹的添加顺序执行用例"""
     runner.run_test(report_title='接口自动化测试报告')
+

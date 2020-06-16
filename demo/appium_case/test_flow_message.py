@@ -20,3 +20,4 @@ class TestMessage(BaseCaseSetup):
         for i in range(1000):
             me.write(driver=self.driver, message=message)
             me.send(self.driver)
+
