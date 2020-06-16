@@ -3,15 +3,6 @@ from common.app_common.read_config import read_ini
 from common.conf_path import *
 
 
-def exist(driver, ini_file_path, name, value):  # 判断是否存在此元素
-    """ini_name:配置文件的路径"""
-    ele = read_ini(ini_file_path=ini_file_path, name=name, value=value)
-    source = driver.section_name_source
-    if ele in source:
-        return True
-    else:
-        return False
-
 def looking_for_element(driver, type, section_name, name):  # 根据元素类型进行不同的元素定位
     """elements_name:元素类型"""
     # 元素类型

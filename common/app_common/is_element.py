@@ -1,15 +1,9 @@
 # —*- coding:utf-8 -*-
-#Created by Administrator on 2020/6/15
+#Created by Administrator on 2020/6/16
 #Copyright (C) 2020 $USER.All rights reserved.
-from common.app_common.element_action import exist
-from selenium.webdriver.support.wait import WebDriverWait
-from demo.base_page_class.base_driver import BaseDriver
-from demo.my_test import *
-
-
-
-
-
+import time
+from common.app_common.read_config import read_ini
+from common.conf_path import *
 
 
 def is_element(driver,ini_file_path,section_name,name):
@@ -26,10 +20,3 @@ def is_element(driver,ini_file_path,section_name,name):
             return False
         else:
             return True
-
-
-
-t=is_element(ini_file_path=ele_id_conf_path,section_name="登录页面",name="输入框")
-print(t)
-
-
