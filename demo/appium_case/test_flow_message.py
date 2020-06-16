@@ -11,9 +11,9 @@ class TestMessage(BaseCaseSetup):
     @tag(Tag.UI_F1)
     def test_chat_group(self):
         "发送消息测试"
-        message = "我爱中华"
-        for i in range(200):
-            message = message + "爱"
+        message = "为中华之崛起而读书"
+        for i in range(100):
+            message = message + "读书"
         me = BasePageMessage()
         me.into_chat_list(self.driver)
         me.into_chat_group(self.driver)

@@ -9,8 +9,8 @@ class BaseCaseSetup(unittest.TestCase):
         cls.driver = BaseDriver().driver_begin()
         log.debug("初始化APP，测试数据初始化")
         BasePageLogin().login_base(driver=cls.driver, user_number=user_1, password=password)
-        for i in range(3):
-            BasePageLogin().skip_limits(cls.driver)
+        # for i in range(3):
+        #     BasePageLogin().skip_limits(cls.driver)
 
 
 if __name__ == '__main__':
