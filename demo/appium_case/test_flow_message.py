@@ -12,12 +12,14 @@ class TestMessage(BaseCaseSetup):
     def test_chat_group(self):
         "发送消息测试"
         message = "为中华之崛起而读书"
-        for i in range(100):
+        for i in range(500):
             message = message + "读书"
+
         me = BasePageMessage()
         me.into_chat_list(self.driver)
         me.into_chat_group(self.driver)
-        for i in range(1000):
+        for i in range(10):
             me.write(driver=self.driver, message=message)
             me.send(self.driver)
+            log.info("第%s条消息发送成功" % int(i+1))
 

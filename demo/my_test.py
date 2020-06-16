@@ -29,8 +29,10 @@ class_name_type = 'class_name_type'
 location_type = 'location_type'
 xpath_type = 'xpath_type'
 
-# 安装包存放路径
-apk_path = r"D:\PythonWorkSpace\Test_Api_App\data\app-release.apk"
+# 安装包存放路径release包
+# apk_path = r"D:\PythonWorkSpace\Test_Api_App\data\app-release.apk"
+# 安装包存放路径debug包
+apk_path=r"D:\PythonWorkSpace\Test_Api_App\data\app-debug.apk"
 
 # monkey日志存放路径
 monkey_log_path = "D:\\PythonWorkSpace\\Test_Api_App\\demo\\report"
