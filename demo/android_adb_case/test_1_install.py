@@ -1,4 +1,4 @@
-from demo.baseclass.base_login_pageUI import *
+from demo.appium_case.base_case import *
 
 
 class TestInstallUninstall(unittest.TestCase):

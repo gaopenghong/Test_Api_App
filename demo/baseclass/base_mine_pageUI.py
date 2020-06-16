@@ -1,8 +1,7 @@
-import time
 
-from common.app_common.element_action import clicking
+
 from demo.my_test import *
-from utx import log
+
 
 
 class BasePageMine():

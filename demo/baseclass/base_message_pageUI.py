@@ -1,8 +1,4 @@
-import time
-
-from common.app_common.element_action import *
 from demo.my_test import *
-from utx import log
 
 
 class BasePageMessage():
@@ -24,7 +20,7 @@ class BasePageMessage():
         inputting(driver=driver, type=id_type, section_name='好友', name='消息输入框', txt=message)
         log.info("输入消息")
 
-    def send(self,driver):
+    def send(self, driver):
         time.sleep(1)
         log.info("发送消息")
         clicking(driver=driver, type=id_type, section_name='好友', name='发送按钮')

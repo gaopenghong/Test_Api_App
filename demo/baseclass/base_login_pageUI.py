@@ -1,20 +1,4 @@
-import time
-import unittest
-import warnings
-from common.app_common.element_action import *
-import os
-import re
-from appium import webdriver
-from common.app_common.read_config import *
-from utx import log
-from utx import *
-from common.app_common.read_config import *
-from common.app_common.shell_install_adb import *
-from common.app_common.shell_boot_adb import *
-from common.app_common.shell_monkey_adb import *
-from demo.baseclass.base_mine_pageUI import *
-from demo.baseclass.base_message_pageUI import *
-from common.api_common.comm import *
+
 from demo.my_test import *
 
 class BasePage():

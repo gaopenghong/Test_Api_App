@@ -1,5 +1,4 @@
 from demo.appium_case.base_case import *
-from demo.baseclass.base_message_pageUI import *
 
 
 class TestMessage(BaseCaseSetup):
