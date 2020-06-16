@@ -1,7 +1,4 @@
-
-
 from demo.my_test import *
-
 
 
 class BasePageMine():
