@@ -1,6 +1,7 @@
 from demo.appium_case.base_case import *
 
 
+
 class TestMessage(BaseCaseSetup):
     """
     用户登录
@@ -17,7 +18,9 @@ class TestMessage(BaseCaseSetup):
 
         me = BasePageMessage()
         me.into_chat_list(self.driver)
+        BasePageLimits().is_ele_do_it(driver=self.driver)
         me.into_chat_group(self.driver)
+        BasePageLimits().is_ele_do_it(driver=self.driver)
         for i in range(10):
             me.write(driver=self.driver, message=message)
             me.send(self.driver)

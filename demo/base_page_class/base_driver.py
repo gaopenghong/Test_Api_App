@@ -2,7 +2,7 @@ from demo.my_test import *
 
 class BaseDriver():
 
-    def driver_begin(self):
+    def driver_begin(self,package_name,activity_name):
         """
         driver驱动启动
         """
@@ -18,8 +18,8 @@ class BaseDriver():
             'platformName': platformName,
             'deviceName': deviceName,
             'platformVersion': deviceVersion,
-            'appPackage': package_name_nly,
-            'appActivity': activity_name_nly,
+            'appPackage': package_name,
+            'appActivity': activity_name,
             'noReset': False,
             'resetKeyboard': False  # 将键盘给隐藏起来
             # 'unicodeKeyboard': True,# 使用unicodeKeyboard的编码方式来发送字符串

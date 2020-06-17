@@ -22,7 +22,7 @@ if __name__ == '__main__':
     # setting.run_case = {Tag.INSTALL}
     # setting.run_case = {Tag.MONKEY}
     # setting.run_case = {Tag.BOOT_TIME}
-    setting.run_case = {Tag.UI_F1}
+    setting.run_case = {Tag.UI_F2}
 
     runner = TestRunner()
     runner.add_case_dir("android_adb_case")
