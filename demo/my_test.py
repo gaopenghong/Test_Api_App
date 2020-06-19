@@ -12,6 +12,7 @@ import os
 import re
 from appium import webdriver
 from common.app_common.is_element import is_element
+from common.app_common.gestures import *
 from common.app_common.element_action import *
 
 # 用户信息

@@ -1,3 +1,5 @@
+import string
+
 from demo.my_test import *
 
 
@@ -24,3 +26,44 @@ class BasePageMessage():
         time.sleep(1)
         log.info("发送消息")
         clicking(driver=driver, type=id_type, section_name='好友', name='发送按钮')
+
+    def into_book(self, driver):
+        time.sleep(1)
+        log.info("通讯录")
+        clicking(driver=driver, type=id_type, section_name='导航', name='通讯录')
+
+    def into_my_groups(self, driver):
+        time.sleep(1)
+        log.info("我的群组")
+        clicking(driver=driver, type=xpath_type, section_name='通讯录', name='我的群组')
+
+    def into_group(self, driver, name):
+        clicking(driver=driver, type=xpath_type, section_name='通讯录', name=name)
+
+    def quit_group(self, driver):
+        """退出或解散群"""
+        clicking(driver=driver, type=id_type, section_name='群聊', name='群设置')
+        swipe_up(driver)
+        clicking(driver=driver, type=id_type, section_name='群聊', name='退出群')
+        clicking(driver=driver, type=id_type, section_name='群聊', name='确定退出')
+
+    def group_info(self, driver, message):
+        """群介绍"""
+        clicking(driver=driver, type=id_type, section_name='群聊', name='群介绍')
+        inputting(driver=driver, type=id_type, section_name='群聊', name='群介绍输入框', txt=message)
+        clicking(driver=driver, type=id_type, section_name='群聊', name='群介绍确定')
+
+    def biaoqian(self,driver,times,randomlength=5):
+
+        clicking(driver=driver, type=id_type, section_name='通讯录', name='标签分组')
+        for i in range(times):
+            string.digits = '0123456789'
+            string.ascii_letters = 'qwertyuioplkjhgfdsazxcvbnmQWERTYUIOPLKJHGFDSAZXCVBNM'
+            str_list = random.sample(string.digits + string.ascii_letters, randomlength)
+            random_str = ''.join(str_list)
+            inputting(driver=driver, type=id_type, section_name='通讯录', name='标签分组输入', txt=random_str)
+            clicking(driver=driver, type=id_type, section_name='通讯录', name='标签分组添加')
+
+
+
+

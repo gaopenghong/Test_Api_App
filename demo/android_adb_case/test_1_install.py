@@ -23,14 +23,14 @@ class TestInstallUninstall(unittest.TestCase):
         re = InstallUninstall().apk_install(apk_path)
         print('安装成功的返回值为：'+re)
         log.info("安装中")
-
+    @skip
     @tag(Tag.INSTALL)
     def test_uninstall(self):
         """卸载APP"""
         time.sleep(5)
         InstallUninstall().apk_uninstall(package_name_nly)
         log.info("卸载中")
-
+    @skip
     @tag(Tag.INSTALL)
     def test_reinstall(self):
         """再次安装APP"""

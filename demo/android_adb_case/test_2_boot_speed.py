@@ -18,12 +18,12 @@ class TestBootSpeed(unittest.TestCase):
 
         # 正则表达式匹配出 id 信息
         device_id = re.findall(r'^\w*\b', read_device_id[1])[0]
-        package = read_package_name(app_name_nly)
-        activity = read_activity_name(app_name_nly)
+        activity_name_nly = read_ini(ini_file_path=app_conf_path, name='牛老幺', value='appActivity')
+        package_name_nly = read_ini(ini_file_path=app_conf_path, name='牛老幺', value='appPackage')
 
         for i in range(self.boot_times):
-            cold_time.append(get_cold_boot_time(package, activity))
-            hot_time.append(get_hot_boot_time(package, activity, device_id))
+            cold_time.append(get_cold_boot_time(package_name_nly, activity_name_nly))
+            hot_time.append(get_hot_boot_time(package_name_nly, activity_name_nly, device_id))
         res_cold_time = 0
         res_hot_time = 0
         log.info("冷启动时间 = " + str(cold_time))

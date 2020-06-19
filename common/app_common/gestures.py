@@ -1,4 +1,4 @@
-def swipe_up(driver, t=500, n=1):  # 向上滑
+def swipe_up(driver, t=1000, n=2):  # 向上滑
 	size = driver.get_window_size()
 	x_start = size['width'] * 0.5  # x坐标
 	y_start = size['height'] * 0.75  # 起始y坐标
