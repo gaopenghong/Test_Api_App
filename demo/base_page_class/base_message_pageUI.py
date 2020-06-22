@@ -63,6 +63,7 @@ class BasePageMessage():
             random_str = ''.join(str_list)
             inputting(driver=driver, type=id_type, section_name='通讯录', name='标签分组输入', txt=random_str)
             clicking(driver=driver, type=id_type, section_name='通讯录', name='标签分组添加')
+            driver,quit()
 
 
 
