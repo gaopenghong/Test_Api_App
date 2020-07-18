@@ -5,7 +5,7 @@ class MonkeyCase(BaseCaseSetup):
     @classmethod
     def setUpClass(cls):
         warnings.simplefilter('ignore', ResourceWarning)
-        cls.times = int(100000)  # monkey执行时间次数
+        cls.times = int(100000000)  # monkey执行时间次数
 
     @tag(Tag.MONKEY)
     def test_monkey_fast(self):

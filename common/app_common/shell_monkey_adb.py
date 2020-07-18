@@ -22,7 +22,7 @@ class MonkeyShell():
         # monkey脚本拼接
         shell_monkey = "shell monkey -p %s -s %s %s" % (self.package, monkey_seed, monkey_parameters)
         # 日志输出命令
-        now = time.strftime("%Y-%m-%d-%H-%M-%S", time.localtime(time.time()))
+        now = time.strftime("%Y-%m-%d-%H%M%S", time.localtime(time.time()))
         monkey_log = self.path + "\\monkey.log"+now
         # 拼接命令
         adb_monkey = "adb  -s %s %s>%s" % (deviceId, shell_monkey, monkey_log)

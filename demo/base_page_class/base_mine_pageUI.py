@@ -33,3 +33,4 @@ class BasePageMine():
         time.sleep(0.5)
         log.info("返回")
         clicking(driver=driver, type=id_type, section_name='我的', name='返回')
+
