@@ -4,7 +4,7 @@ import requests
 # 爬取电影天堂的所有电影名
 global page_numbers
 try:
-    page_numbers = 581  # 做成持久化的
+    page_numbers = 655  # 做成持久化的
 
     f = "D:\PythonWorkSpace\data\movies"
     while page_numbers < 1000:
@@ -28,3 +28,8 @@ try:
 except  UnicodeEncodeError:
     page_numbers = page_numbers + 2
     print("更新page_number")
+
+
+
+
+
