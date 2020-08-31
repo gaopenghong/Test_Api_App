@@ -16,6 +16,11 @@ def make_owner(floor):
             owner = "18-%s%s" % (floor, number)
             with open(f, "a+") as file:
                 file.write(owner + "    ")
+
+
+
+
+
             number = number + 1
 if __name__ == '__main__':
     list=[x for x in range(10) if x/2>1]
